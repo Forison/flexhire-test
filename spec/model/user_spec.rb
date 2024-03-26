@@ -3,7 +3,8 @@ require "rails_helper"
 RSpec.describe User, type: :model do
  
   describe 'associations' do
-    # it { should have_many(:posts).class_name('Post') }
+    it { should have_many(:sent_payments).class_name('Payment') }
+    it { should have_many(:received_payments).class_name('Payment') }
   end
   describe 'validation' do
     it { is_expected.to validate_presence_of :last_name }
